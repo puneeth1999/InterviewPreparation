@@ -16,15 +16,14 @@ For the purpose of this problem, we will return 0 when needle is an empty string
 
 
 Example 1:
-
 Input: haystack = "hello", needle = "ll"
 Output: 2
-Example 2:
 
+Example 2:
 Input: haystack = "aaaaa", needle = "bba"
 Output: -1
-Example 3:
 
+Example 3:
 Input: haystack = "", needle = ""
 Output: 0
 
