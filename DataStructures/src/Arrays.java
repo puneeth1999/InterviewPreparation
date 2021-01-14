@@ -57,12 +57,38 @@ public class Arrays {
     }
 
     //Pop
-    //Pop in the front
+    //Pop in the front --- Returns nothing
     void pop(){
-        if (count < array.length/2){
-//            int [] new_arra
+        //Enter code here
+        int new_array [] = new int[count - 1];
+        for (int i = 0; i < new_array.length; i++){
+            new_array[i] = array[i+1];
+        }
+        array = new_array;
+        count--;
+    }
+    //Pop with an index -- Returns nothing
+    void pop (int idx){
+        for (int i = idx; i < array.length - 1; i++){
+            array[i] = array[i+1];
+        }
+        count--;
+    }
+    //BubbleSort -- for now
+    void sort(){
+        for (int i = 0; i < count-1; i++){
+            for (int j = 0; j < count-i-1; j++){
+                if (array[j] > array[j+1])
+                {
+                    // swap arr[j+1] and arr[j]
+                    int temp = array[j];
+                    array[j] = array[j+1];
+                    array[j+1] = temp;
+                }
+            }
         }
     }
+
 
     public static void main(String[] args){
         Arrays a = new Arrays(3);
@@ -76,5 +102,17 @@ public class Arrays {
         a.insert(2, 6);
         a.printArray();
         System.out.println(a.getLength());
+        a.pop();
+        a.printArray();
+        a.pop(1);
+        a.pop(a.getLength()-1);
+        a.printArray();
+        a.insert(1);
+        a.insert(2);
+        a.insert(3);
+        a.insert(4);
+        a.printArray();
+        a.sort();
+        a.printArray();
     }
 }
